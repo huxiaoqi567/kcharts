@@ -6,7 +6,7 @@ gallery/kcharts/1.3/mapchart/mapdata
 gallery/kcharts/1.3/mapchart/index
 
 */
-KISSY.add("gallery/kcharts/1.4/mapchart/theme", function (S) {
+KISSY.add("gallery/kcharts/1.3/mapchart/theme", function (S) {
     var COLOR_TPL = "{COLOR}";
     return{
         "ks-chart-default": {

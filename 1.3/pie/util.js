@@ -1,4 +1,4 @@
-;KISSY.add("gallery/kcharts/1.4/pie/util",function(S){
+;KISSY.add("gallery/kcharts/1.3/pie/util",function(S){
    //==================== basic utils ====================
 
    var reduce = S.reduce;

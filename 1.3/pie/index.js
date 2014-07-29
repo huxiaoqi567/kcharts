@@ -2,7 +2,7 @@
 /**
  * 简单饼图，嵌套的饼图请使用piechart
  * */
-;KISSY.add("gallery/kcharts/1.4/pie/index",function(S,Util,Sector,Animate,Raphael,Color,Base,E,D){
+;KISSY.add("gallery/kcharts/1.3/pie/index",function(S,Util,Sector,Animate,Raphael,Color,Base,E,D){
    var map = S.map;
    var reduce = S.reduce;
    var each = S.each;
@@ -128,9 +128,9 @@
    }
 
    var Pie;
-   if(Base.extend){ // 1.4
+   if(Base.extend){ 
      Pie = Base.extend(methods);
-   }else{           // 1.3
+   }else{           
      Pie = function(cfg){
        this.set(cfg);
        this.userConfig = cfg;
@@ -143,9 +143,9 @@
   requires:[
     "./util",
     "../piechart/sector",
-    "gallery/kcharts/1.4/animate/index",
-    "gallery/kcharts/1.4/raphael/index",
-    "gallery/kcharts/1.4/tools/color/index",
+    "gallery/kcharts/1.3/animate/index",
+    "gallery/kcharts/1.3/raphael/index",
+    "gallery/kcharts/1.3/tools/color/index",
     "base",
     "event",
     "dom"
