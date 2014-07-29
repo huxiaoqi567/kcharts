@@ -209,6 +209,11 @@ KISSY.use("gallery/kcharts/1.3/datetime/index,base,node,event,dd,dd/plugin/const
 			areas: {
 				isShow: true
 			},
+			points:{
+				hoverAttr:{
+					stroke:"#ccc"
+				}
+			},
 			legend: {
 				isShow: false
 			},

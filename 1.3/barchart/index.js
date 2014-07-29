@@ -343,6 +343,19 @@ KISSY.add('gallery/kcharts/1.3/barchart/index', function(S, Node, Base, Template
 				}
 			}
 		},
+		delegateClick : function(e) {
+            var self = this,
+                ctn = self.getInnerContainer();
+                for(var i in self._evtEls._bars){
+                    for(var j in self._evtEls._bars[i]){
+                         var rect = self._evtEls._bars[i][j];
+                          if (self.isInSide(e.offsetX + ctn.x, e.offsetY + ctn.y, rect['x'], rect['y'], rect['width'], rect['height'])) {
+                        self.barClick(i, j);
+                        return;
+                    }
+                    }
+                }
+        },
 		clearEvtLayout: function() {
 			var self = this;
 			if (self._evtEls._bars && self._evtEls._bars.length) {
@@ -430,6 +443,15 @@ KISSY.add('gallery/kcharts/1.3/barchart/index', function(S, Node, Base, Template
 				self.paperLeave();
 				self.curBarIndex = undefined;
 			})
+
+			Evt.detach(self._evtEls.paper.$paper, "click");
+
+			Evt.on(self._evtEls.paper.$paper, "click", function(e) {
+                //fix firefox offset bug
+                e = self.getOffset(e);
+                //mousemove代理
+                self.delegateClick(e);
+            });
 		},
 		/**
 			TODO 判断是否为空数据点
